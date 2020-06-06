@@ -13,12 +13,19 @@ int main()
     ifstream infile;
     infile.open("input.txt");
 
+    ofstream outfile;
+    outfile.open("output.txt");
+
+    outfile.setf(ios::fixed,ios::floatfield);
+    outfile.precision(3);
+
     int n;
     while( infile >> n)
     {
-        cout << kseries(n) << endl;
+        outfile << kseries(n) << endl;
     }
 
+    infile.close();
     return 0;
 }
 
